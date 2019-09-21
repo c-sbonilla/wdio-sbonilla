@@ -5,11 +5,13 @@
 ### Clone project
 
 Clone [Repo]
+
     $ git clone git@github.com:c-sbonilla/wdio-sbonilla.git
 
 ### Node v12.
 
 Use [Node@12.10.0]
+    
     $ nvm use 12.10.0
 
 ### Chai
@@ -26,25 +28,32 @@ Install [Chalk]
     
 ### Cucumber
 
-Install [cucumber]
+Install [Cucumber]:
+
     $ npm install cucumber
     
 ### Schema
 
-Install [schema]
+Install [Schema]:
+
     $ npm install schema
     
 ## Install dependancies
 
 Install [npm]
+
     $ npm install
     
 Install [yarn]
+
     $ yarn install
     
 ## Running Tests
 
 ### Excecute
-    $ yarn run test
-    #Or
+
+    $ npm install chai
+    
+  #Or
+    
     $ yarn run wdio
