@@ -54,6 +54,6 @@ Install [yarn]
 
     $ npm install chai
     
-  #Or
+  Or
     
     $ yarn run wdio
