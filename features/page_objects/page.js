@@ -1,19 +1,14 @@
-'use strict';
-
-export default class Page {
-    constructor () {
-        this.url = browser.getUrl()
-    }
-
-    open(path) {
+class Page {
+    openNewUrl(path){
         browser.url(path);
     }
 
-    clickPageElement(element) {
-        browser.click(element);
+    clickPageElement(element){
+        element.click();
     }
 
-    scrollToView(element) {
-        browser.scrollIntoView(element);
+    scrollToView(element){
+        element.scrollIntoView();
     }
 }
+module.exports = Page;

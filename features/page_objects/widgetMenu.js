@@ -1,6 +1,11 @@
-import Page from "./page";
-
-class WidgetMenu extends Page {
+const Page = require('./page');
+class WidgetMenu  extends Page{
+    constructor(){
+        super();
+        this.widgetUrl = 'https://demoqa.com/category/widgets/';
+    }
+    get distroy() { return $('#destroy')}
     get pageTitle() { return $('#content > h1')}
 }
-export default new WidgetMenu();
+module.exports = new WidgetMenu;
+

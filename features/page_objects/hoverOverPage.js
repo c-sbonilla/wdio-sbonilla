@@ -1,11 +1,10 @@
-import Page from "./page";
-
-class HoverOver extends Page {
+class HoverOver {
     get ageLabel() { return $('#tooltipDemo')}
 
     hoverOverElem(){
-        browser.elementHover(this.ageLabel);
+       this.ageLabel.moveTo();
     }
 
 }
-export default new HoverOver();
+module.exports = new HoverOver;
+
