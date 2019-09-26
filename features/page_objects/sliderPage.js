@@ -1,6 +1,4 @@
-import Page from "./page";
-
-class SliderMenu extends Page {
+class SliderMenu {
     get square() { return $('#slider > span')}
 
     moveElement(){
@@ -8,4 +6,5 @@ class SliderMenu extends Page {
     }
 
 }
-export default new SliderMenu();
+module.exports = new SliderMenu;
+

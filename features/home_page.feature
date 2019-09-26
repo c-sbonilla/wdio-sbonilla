@@ -22,7 +22,7 @@ Feature: User should be able to navigate through the site
     Given I navigate to the home page
     When I scroll to bring datePicker label into view
     And I click on the datePicker label
-    Then I pick the september 25
+    Then I pick 09/25/2019
     And the day displayed should be 09/25/2019
 
   Scenario: User should be able to move a slider

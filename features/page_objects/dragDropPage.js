@@ -1,11 +1,13 @@
-import Page from "./page";
+const Page = require('./page');
 
 class DragDropMenu extends Page {
-    get square() { return $('#slider > span')}
+    get square() { return $('#draggable')}
 
     moveSquare(){
         this.square.moveTo(140, 0);
     }
 
 }
-export default new DragDropMenu();
+module.exports = new DragDropMenu;
+
+

@@ -1,7 +1,9 @@
-import Page from "./page";
-import chalk from "chalk";
-
-class HomePage extends Page {
+const Page = require('./page');
+class HomePage extends Page{
+    constructor(){
+        super();
+        this.homeUrl = 'https://www.demoqa.com';
+    }
     get imageLogo() { return $('#logo-events > a > img')}
     get widgetsMenu() { return $('#menu-top > li:nth-child(3) > a')}
     get interactionsMenu() { return $('#menu-top > li:nth-child(2) > a')}
@@ -13,26 +15,29 @@ class HomePage extends Page {
     get autocompleteLabel() {return $('#sidebar > aside:nth-child(2) > ul > li:nth-child(18) > a')};
     get switchWindowLabel() {return $('#sidebar > aside:nth-child(2) > ul > li:nth-child(3) > a')};
     get spinnerLabel() {return $('#sidebar > aside:nth-child(2) > ul > li:nth-child(8) > a')};
-    get selectableLabel() {return $('#selectable > li:nth-child(3)')};
+    get selectableLabel() {return $('//*[@id="sidebar"]/aside[1]/ul/li[2]/a')};
+    get automationPractice() { return $('//*[@id="sidebar"]/aside[2]/ul/li[3]')}
+    get openTab() { return $('#content > div.demo-frame > button:nth-child(10)')}
+    get thirdElem() { return $('//*[@id="selectable"]/li[3]')}
     get widgetToggle() {return $('#content > div.demo-frame > p:nth-child(5) > span > a.ui-button.ui-widget.ui-spinner-button.ui-spinner-up.ui-corner-tr.ui-button-icon-only')}
 
-    subUrl(){
-        return this.url;
+    openNewTab(){
+        this.clickPageElement(this.openTab);
     }
 
     goToSubMenu(option){
         switch (option) {
             case 'widgets':
-                super.clickPageElement(this.widgetsMenu);
+                this.clickPageElement(this.widgetsMenu);
                 break;
             case 'interactions':
-                super.clickPageElement(this.interactionsMenu);
+                this.clickPageElement(this.interactionsMenu);
                 break;
             case 'home':
-                super.clickPageElement(this.homeMenu);
+                this.clickPageElement(this.homeMenu);
                 break;
             case 'doubleClick':
-                super.clickPageElement((this.doubleClickMenu));
+                this.clickPageElement((this.doubleClickMenu));
                 break;
             default:
                 console.log(chalk.greenBright('No available menu'));
@@ -42,29 +47,30 @@ class HomePage extends Page {
     goToSubLabel(option){
         switch (option) {
             case 'datePicker':
-                super.scrollToView(this.datePickerLabel);
+                this.scrollToView(this.datePickerLabel);
                 break;
             case 'slider':
-                super.scrollToView((this.sliderLabel));
+                this.scrollToView((this.sliderLabel));
                 break;
             case 'droppable':
-                super.scrollToView(this.droppableLabel);
+                this.scrollToView(this.droppableLabel);
                 break;
             case 'autoComplete':
-                super.clickPageElement((this.autocompleteLabel));
+                this.clickPageElement((this.autocompleteLabel));
                 break;
             case 'switchWindow':
-                super.clickPageElement((this.switchWindowLabel));
+                this.clickPageElement((this.switchWindowLabel));
                 break;
             case 'spinner':
-                super.clickPageElement((this.spinnerLabel));
+                this.clickPageElement((this.spinnerLabel));
                 break;
             case 'selectable':
-                super.clickPageElement((this.selectableLabel));
+                this.clickPageElement((this.selectableLabel));
                 break;
             default:
                 console.log(chalk.white("No available subMenu"));
         }
     }
 }
-export default new HomePage();
+module.exports = new HomePage;
+
